@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SOVEREIGN — Organisation Esport française. Valorant, League of Legends, Counter-Strike 2.">
+  <title>SOVEREIGN — Esport</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900;1,700;1,900&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ════════════════════════════════════════
+       NAV
+  ════════════════════════════════════════ -->
+  <nav id="mainNav">
+    <a href="index.html" class="nav-logo">
+      <img src="assets/images/logo.png" alt="SOVEREIGN">
+    </a>
+
+    <div class="nav-center">
+      <a href="#roster"   class="nav-pill active">Équipes</a>
+      <a href="#sponsors" class="nav-pill">Sponsors</a>
+      <a href="#contact"  class="nav-pill">Contact</a>
+    </div>
+
+    <div class="nav-right">
+      <!-- Discord -->
+      <a href="https://discord.gg/VOTRE_LIEN" target="_blank" class="nav-icon-link" title="Discord">
+        <svg class="nav-icon" viewBox="0 0 24 24">
+          <path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.032.054a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/>
+        </svg>
+      </a>
+      <!-- Twitch -->
+      <a href="https://twitch.tv/VOTRE_CHAINE" target="_blank" class="nav-icon-link" title="Twitch">
+        <svg class="nav-icon" viewBox="0 0 24 24">
+          <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/>
+        </svg>
+      </a>
+      <!-- YouTube -->
+      <a href="https://youtube.com/@VOTRE_CHAINE" target="_blank" class="nav-icon-link" title="YouTube">
+        <svg class="nav-icon" viewBox="0 0 24 24">
+          <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+      </a>
+      <!-- TikTok -->
+      <a href="https://tiktok.com/@VOTRE_COMPTE" target="_blank" class="nav-icon-link" title="TikTok">
+        <svg class="nav-icon" viewBox="0 0 24 24">
+          <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/>
+        </svg>
+      </a>
+
+      <a href="https://discord.gg/VOTRE_LIEN" target="_blank" class="nav-join">Rejoindre</a>
+    </div>
+  </nav>
+
+  <!-- ════════════════════════════════════════
+       HERO
+  ════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-deco">S</div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <div class="hero-overline">Organisation Esport Française</div>
+        <h1 class="hero-title">
+          SOVEREIGN
+          <span>ESPORT</span>
+        </h1>
+      </div>
+      <div class="hero-right">
+        <p class="hero-tagline">Compétition. Excellence. Domination.<br>Nos équipes jouent au plus haut niveau.</p>
+        <div class="hero-ctas">
+          <a href="#roster"  class="btn btn-white">Voir les équipes</a>
+          <a href="https://discord.gg/VOTRE_LIEN" target="_blank" class="btn btn-outline">Discord</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       GAME FILTER
+  ════════════════════════════════════════ -->
+  <div id="game-filter">
+    <div class="filter-inner">
+      <button class="filter-btn active" data-game="all">Tous</button>
+      <button class="filter-btn" data-game="valorant">Valorant</button>
+      <button class="filter-btn" data-game="lol">League of Legends</button>
+      <button class="filter-btn" data-game="cs2">Counter-Strike 2</button>
+      <!-- Ajouter un jeu : dupliquer la ligne ci-dessus et changer data-game -->
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       ROSTER
+  ════════════════════════════════════════ -->
+  <div id="roster">
+
+    <!-- ── VALORANT ── -->
+    <div class="game-block rv" data-game="valorant">
+      <div class="game-header">
+        <div class="game-title-row">
+          <span class="game-tag">Équipe</span>
+          <h2 class="game-name">VALORANT</h2>
+        </div>
+        <a href="pages/valorant.html" class="game-cta">Page équipe <span class="cta-arr"></span></a>
+      </div>
+      <div class="players-grid">
+        <!-- Joueur 1 — remplacer player-initials par une vraie photo si disponible -->
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">SR</div></div>
+          <!-- Photo: <img src="assets/images/players/shadowrift.png" alt="ShadowRift"> -->
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">IGL · Duelist</span></div>
+            <div class="p-pseudo">ShadowRift</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">VX</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇧🇪</span><span class="p-role">Sentinel</span></div>
+            <div class="p-pseudo">VortexX</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card accent">
+          <div class="player-silhouette"><div class="player-initials">NK</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">Controller</span></div>
+            <div class="p-pseudo">Noktis</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">PH</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇨🇭</span><span class="p-role">Initiator</span></div>
+            <div class="p-pseudo">Phantex</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">ZR</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">Flex</span></div>
+            <div class="p-pseudo">ZeroR</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── LEAGUE OF LEGENDS ── -->
+    <div class="game-block rv d1" data-game="lol">
+      <div class="game-header">
+        <div class="game-title-row">
+          <span class="game-tag">Équipe</span>
+          <h2 class="game-name">LEAGUE OF LEGENDS</h2>
+        </div>
+        <a href="pages/lol.html" class="game-cta">Page équipe <span class="cta-arr"></span></a>
+      </div>
+      <div class="players-grid">
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">KY</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">Top Lane</span></div>
+            <div class="p-pseudo">Kyoran</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card accent">
+          <div class="player-silhouette"><div class="player-initials">DK</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">Jungle</span></div>
+            <div class="p-pseudo">Darkwolf</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">AX</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇱🇺</span><span class="p-role">Mid Lane</span></div>
+            <div class="p-pseudo">Axiom</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">CR</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">Bot Lane</span></div>
+            <div class="p-pseudo">Crimson</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">EV</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇧🇪</span><span class="p-role">Support</span></div>
+            <div class="p-pseudo">Evael</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── COUNTER-STRIKE 2 ── -->
+    <div class="game-block rv d2" data-game="cs2">
+      <div class="game-header">
+        <div class="game-title-row">
+          <span class="game-tag">Équipe</span>
+          <h2 class="game-name">COUNTER-STRIKE 2</h2>
+        </div>
+        <a href="pages/cs2.html" class="game-cta">Page équipe <span class="cta-arr"></span></a>
+      </div>
+      <div class="players-grid">
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">RV</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">IGL · Rifler</span></div>
+            <div class="p-pseudo">Raven</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">GH</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">AWP</span></div>
+            <div class="p-pseudo">Ghostfire</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card accent">
+          <div class="player-silhouette"><div class="player-initials">NX</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇨🇭</span><span class="p-role">Entry Fragger</span></div>
+            <div class="p-pseudo">Nexus</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">OB</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">Lurker</span></div>
+            <div class="p-pseudo">Obsidian</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+        <div class="player-card">
+          <div class="player-silhouette"><div class="player-initials">FL</div></div>
+          <div class="player-info">
+            <div class="player-flag-role"><span class="p-flag">🇧🇪</span><span class="p-role">Support</span></div>
+            <div class="p-pseudo">Flare</div>
+            <div class="p-realname">Prénom Nom</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /roster -->
+
+  <!-- ════════════════════════════════════════
+       SOCIALS
+  ════════════════════════════════════════ -->
+  <div id="socials">
+    <div class="socials-inner">
+
+      <a href="https://discord.gg/VOTRE_LIEN" target="_blank" class="soc">
+        <div class="soc-icon-box">
+          <svg viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.032.054a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+        </div>
+        <div class="soc-text">
+          <div class="soc-platform">Communauté</div>
+          <div class="soc-name">Discord</div>
+        </div>
+        <div class="soc-arrow"><svg viewBox="0 0 10 10"><path d="M1 5h8M5 1l4 4-4 4" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
+      </a>
+
+      <a href="https://twitch.tv/VOTRE_CHAINE" target="_blank" class="soc">
+        <div class="soc-icon-box">
+          <svg viewBox="0 0 24 24"><path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/></svg>
+        </div>
+        <div class="soc-text">
+          <div class="soc-platform">Live</div>
+          <div class="soc-name">Twitch</div>
+        </div>
+        <div class="soc-arrow"><svg viewBox="0 0 10 10"><path d="M1 5h8M5 1l4 4-4 4" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
+      </a>
+
+      <a href="https://youtube.com/@VOTRE_CHAINE" target="_blank" class="soc">
+        <div class="soc-icon-box">
+          <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </div>
+        <div class="soc-text">
+          <div class="soc-platform">Vidéos</div>
+          <div class="soc-name">YouTube</div>
+        </div>
+        <div class="soc-arrow"><svg viewBox="0 0 10 10"><path d="M1 5h8M5 1l4 4-4 4" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
+      </a>
+
+      <a href="https://tiktok.com/@VOTRE_COMPTE" target="_blank" class="soc">
+        <div class="soc-icon-box">
+          <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+        </div>
+        <div class="soc-text">
+          <div class="soc-platform">Short vidéos</div>
+          <div class="soc-name">TikTok</div>
+        </div>
+        <div class="soc-arrow"><svg viewBox="0 0 10 10"><path d="M1 5h8M5 1l4 4-4 4" stroke="white" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg></div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       SPONSORS
+  ════════════════════════════════════════ -->
+  <section id="sponsors">
+    <div class="sponsors-head rv">
+      <h2 class="sponsors-title">Nos<br>Sponsors</h2>
+      <p class="sponsors-sub">Des marques qui font confiance à SOVEREIGN pour porter leurs couleurs au plus haut niveau.</p>
+    </div>
+
+    <!-- Titre -->
+    <div class="sponsor-main-slot rv d1">
+      <div class="slot-content">
+        <div class="slot-tier">Partenaire Titre</div>
+        <div class="slot-plus">+</div>
+        <div class="slot-label">Votre logo ici</div>
+      </div>
+    </div>
+
+    <!-- Gold -->
+    <div class="sponsors-row two rv d2">
+      <div class="sponsor-slot"><div class="slot-content"><div class="slot-tier">Gold</div><div class="slot-plus">+</div><div class="slot-label">Partenaire</div></div></div>
+      <div class="sponsor-slot"><div class="slot-content"><div class="slot-tier">Gold</div><div class="slot-plus">+</div><div class="slot-label">Partenaire</div></div></div>
+    </div>
+
+    <!-- Silver -->
+    <div class="sponsors-row three rv d3">
+      <div class="sponsor-slot"><div class="slot-content"><div class="slot-tier">Silver</div><div class="slot-plus">+</div><div class="slot-label">Partenaire</div></div></div>
+      <div class="sponsor-slot"><div class="slot-content"><div class="slot-tier">Silver</div><div class="slot-plus">+</div><div class="slot-label">Partenaire</div></div></div>
+      <div class="sponsor-slot"><div class="slot-content"><div class="slot-tier">Silver</div><div class="slot-plus">+</div><div class="slot-label">Partenaire</div></div></div>
+    </div>
+
+    <div class="sponsors-become rv d2">
+      <div class="become-text">
+        <h3>Devenez partenaire</h3>
+        <p>Associez votre marque à une organisation en pleine croissance. Des offres adaptées à chaque ambition.</p>
+      </div>
+      <a href="#contact" class="btn btn-white">Nous contacter</a>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       CONTACT
+  ════════════════════════════════════════ -->
+  <section id="contact">
+    <div class="contact-wrap">
+      <div class="contact-left rv">
+        <h2>Écrivez-<br><span>nous.</span></h2>
+        <p>Candidature joueur, partenariat, presse ou toute autre demande. Nous répondons sous 48h.</p>
+        <div class="contact-facts">
+          <div class="cf"><span class="cf-k">Email</span><span>contact@sovereign-esport.fr</span></div>
+          <div class="cf"><span class="cf-k">Discord</span><span>discord.gg/VOTRE_LIEN</span></div>
+          <div class="cf"><span class="cf-k">Pays</span><span>France</span></div>
+        </div>
+      </div>
+
+      <form class="contact-form rv d2" action="#" method="post">
+        <div class="row2">
+          <div class="ff"><label for="prenom">Prénom</label><input type="text" id="prenom" name="prenom" placeholder="John" required></div>
+          <div class="ff"><label for="nom">Nom</label><input type="text" id="nom" name="nom" placeholder="Doe" required></div>
+        </div>
+        <div class="ff"><label for="email">Email</label><input type="email" id="email" name="email" placeholder="john@example.com" required></div>
+        <div class="ff">
+          <label for="objet">Objet</label>
+          <select id="objet" name="objet">
+            <option value="">Sélectionner...</option>
+            <option value="candidature">Candidature joueur</option>
+            <option value="partenariat">Partenariat / Sponsoring</option>
+            <option value="presse">Presse &amp; Médias</option>
+            <option value="autre">Autre</option>
+          </select>
+        </div>
+        <div class="ff"><label for="message">Message</label><textarea id="message" name="message" placeholder="Votre message..."></textarea></div>
+        <div class="form-foot">
+          <span class="form-note">Réponse sous 48h</span>
+          <button type="submit" class="btn btn-white">Envoyer</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- ════════════════════════════════════════
+       FOOTER
+  ════════════════════════════════════════ -->
+  <footer>
+    <div class="footer-wrap">
+      <img src="assets/images/logo.png" alt="SOVEREIGN">
+      <ul class="footer-nav">
+        <li><a href="#roster">Équipes</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="pages/mentions-legales.html">Mentions légales</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 SOVEREIGN Esport</p>
+    </div>
+  </footer>
+
+  <!-- Script -->
+  <script src="js/main.js"></script>
+</body>
+</html>

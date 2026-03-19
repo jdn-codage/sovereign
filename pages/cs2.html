@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SOVEREIGN — Counter-Strike 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow:ital,wght@0,300;0,400;0,500;0,600;0,700;0,900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    /* ── Page-specific styles ── */
+    .page-hero {
+      min-height: 60vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 48px 64px;
+      position: relative;
+      overflow: hidden;
+      background: var(--black);
+    }
+    .page-hero-bg {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 80% 70% at 50% 100%, var(--purple) 0%, transparent 65%),
+        linear-gradient(to top, rgba(0,0,0,.8) 0%, transparent 60%);
+    }
+    .page-hero-deco {
+      position: absolute; top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(200px, 30vw, 440px);
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,.04);
+      pointer-events: none; user-select: none; line-height: 1;
+    }
+    .page-hero-content { position: relative; z-index: 2; }
+    .back-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 11px; font-weight: 600; letter-spacing: .2em;
+      text-transform: uppercase; color: var(--dim);
+      text-decoration: none; transition: color .2s;
+      margin-bottom: 32px;
+    }
+    .back-link:hover { color: var(--white); }
+    .back-arr {
+      width: 28px; height: 1px; background: currentColor; position: relative;
+    }
+    .back-arr::before {
+      content: ''; position: absolute; left: 0; top: -3px;
+      width: 6px; height: 6px;
+      border-left: 1.5px solid currentColor;
+      border-bottom: 1.5px solid currentColor;
+      transform: rotate(45deg);
+    }
+    .page-label {
+      font-size: 11px; font-weight: 600; letter-spacing: .3em;
+      text-transform: uppercase; color: var(--dim); margin-bottom: 10px;
+    }
+    .page-title {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: clamp(60px, 10vw, 130px);
+      line-height: .9; letter-spacing: .01em;
+    }
+    .page-title span { color: rgba(255,255,255,.2); display: block; }
+
+    /* Full roster grid */
+    .roster-section { max-width: 1400px; margin: 0 auto; padding: 80px 48px; }
+    .roster-section h2 {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px; letter-spacing: .02em;
+      margin-bottom: 32px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border);
+    }
+    .players-grid-large {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 2px;
+    }
+
+    /* Player detail card (larger) */
+    .player-card-lg {
+      position: relative; aspect-ratio: 2/3;
+      overflow: hidden; background: var(--purple);
+      display: flex; flex-direction: column; justify-content: flex-end;
+    }
+    .player-card-lg.accent { background: var(--purple-l); }
+    .player-card-lg::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 60%; background: linear-gradient(to top, rgba(0,0,0,.95) 0%, transparent 100%);
+    }
+    .player-card-lg::before {
+      content: ''; position: absolute; inset: 0;
+      background: var(--purple-l); opacity: 0; transition: opacity .3s; z-index: 1;
+    }
+    .player-card-lg:hover::before { opacity: .15; }
+    .player-lg-sil {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .player-lg-init {
+      font-family: 'Bebas Neue', sans-serif; font-size: 130px;
+      color: rgba(255,255,255,.06); line-height: 1; user-select: none;
+    }
+    .player-lg-info {
+      position: relative; z-index: 2; padding: 24px 20px;
+      transition: transform .3s;
+    }
+    .player-card-lg:hover .player-lg-info { transform: translateY(-4px); }
+    .player-lg-flag-role { display: flex; align-items: center; gap: 6px; margin-bottom: 6px; }
+    .player-lg-pseudo { font-family: 'Bebas Neue', sans-serif; font-size: 36px; letter-spacing: .02em; line-height: 1; }
+    .player-lg-real { font-size: 11px; font-weight: 300; color: rgba(255,255,255,.4); margin-top: 3px; }
+    .player-lg-socials { display: flex; gap: 10px; margin-top: 12px; }
+    .player-lg-socials a {
+      width: 28px; height: 28px; border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.2);
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none; transition: all .2s;
+    }
+    .player-lg-socials a:hover { border-color: var(--white); background: rgba(255,255,255,.1); }
+    .player-lg-socials svg { width: 12px; height: 12px; fill: var(--white); }
+
+    @media(max-width:900px) {
+      .players-grid-large { grid-template-columns: repeat(2, 1fr); }
+      .page-hero { padding: 0 24px 48px; }
+      .roster-section { padding: 60px 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="mainNav">
+    <a href="../index.html" class="nav-logo"><img src="../assets/images/logo.png" alt="SOVEREIGN"></a>
+    <div class="nav-center">
+      <a href="../index.html#roster"   class="nav-pill active">Équipes</a>
+      <a href="../index.html#sponsors" class="nav-pill">Sponsors</a>
+      <a href="../index.html#contact"  class="nav-pill">Contact</a>
+    </div>
+    <div class="nav-right">
+      <a href="https://discord.gg/VOTRE_LIEN" target="_blank" class="nav-icon-link" title="Discord">
+        <svg class="nav-icon" viewBox="0 0 24 24"><path d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0 12.64 12.64 0 0 0-.617-1.25.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057c.002.022.015.043.032.054a19.9 19.9 0 0 0 5.993 3.03.078.078 0 0 0 .084-.028c.462-.63.874-1.295 1.226-1.994.021-.041.001-.09-.041-.106a13.1 13.1 0 0 1-1.872-.892.077.077 0 0 1-.008-.128 10.2 10.2 0 0 0 .372-.292.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127 12.299 12.299 0 0 1-1.873.892.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028 19.839 19.839 0 0 0 6.002-3.03.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03z"/></svg>
+      </a>
+      <a href="https://discord.gg/VOTRE_LIEN" target="_blank" class="nav-join">Rejoindre</a>
+    </div>
+  </nav>
+
+  <!-- PAGE HERO -->
+  <div class="page-hero" style="padding-top: var(--nav-h);">
+    <div class="page-hero-bg"></div>
+    <div class="page-hero-deco">CS2</div>
+    <div class="page-hero-content">
+      <a href="../index.html" class="back-link"><span class="back-arr"></span> Toutes les équipes</a>
+      <div class="page-label">Sovereign Esport</div>
+      <h1 class="page-title">COUNTER-STRIKE 2<span>BLUE</span></h1>
+    </div>
+  </div>
+
+  <!-- ROSTER -->
+  <div class="roster-section">
+    <h2>Roster</h2>
+    <div class="players-grid-large">
+
+      <div class="player-card-lg">
+        <div class="player-lg-sil"><div class="player-lg-init">SR</div></div>
+        <!-- Remplacez par: <img src="../assets/images/players/shadowrift.png" alt="ShadowRift"> -->
+        <div class="player-lg-info">
+          <div class="player-lg-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">IGL · Duelist</span></div>
+          <div class="player-lg-pseudo">ShadowRift</div>
+          <div class="player-lg-real">Prénom Nom</div>
+        </div>
+      </div>
+
+      <div class="player-card-lg">
+        <div class="player-lg-sil"><div class="player-lg-init">VX</div></div>
+        <div class="player-lg-info">
+          <div class="player-lg-flag-role"><span class="p-flag">🇧🇪</span><span class="p-role">Sentinel</span></div>
+          <div class="player-lg-pseudo">VortexX</div>
+          <div class="player-lg-real">Prénom Nom</div>
+        </div>
+      </div>
+
+      <div class="player-card-lg accent">
+        <div class="player-lg-sil"><div class="player-lg-init">NK</div></div>
+        <div class="player-lg-info">
+          <div class="player-lg-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">Controller</span></div>
+          <div class="player-lg-pseudo">Noktis</div>
+          <div class="player-lg-real">Prénom Nom</div>
+        </div>
+      </div>
+
+      <div class="player-card-lg">
+        <div class="player-lg-sil"><div class="player-lg-init">PH</div></div>
+        <div class="player-lg-info">
+          <div class="player-lg-flag-role"><span class="p-flag">🇨🇭</span><span class="p-role">Initiator</span></div>
+          <div class="player-lg-pseudo">Phantex</div>
+          <div class="player-lg-real">Prénom Nom</div>
+        </div>
+      </div>
+
+      <div class="player-card-lg">
+        <div class="player-lg-sil"><div class="player-lg-init">ZR</div></div>
+        <div class="player-lg-info">
+          <div class="player-lg-flag-role"><span class="p-flag">🇫🇷</span><span class="p-role">Flex</span></div>
+          <div class="player-lg-pseudo">ZeroR</div>
+          <div class="player-lg-real">Prénom Nom</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-wrap">
+      <img src="../assets/images/logo.png" alt="SOVEREIGN">
+      <ul class="footer-nav">
+        <li><a href="../index.html#roster">Équipes</a></li>
+        <li><a href="../index.html#sponsors">Sponsors</a></li>
+        <li><a href="../index.html#contact">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2025 SOVEREIGN Esport</p>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>
